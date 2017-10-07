@@ -19,5 +19,6 @@ target 'pic24' do
 pod 'Firebase'
 pod 'Firebase/Auth'
 pod 'Firebase/Database'
+pod 'Firebase/Firestore'
 pod 'Firebase/Core'
 end

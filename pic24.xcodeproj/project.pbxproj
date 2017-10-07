@@ -17,6 +17,13 @@
 		FA057CEF1F875DA7003D846B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA057CED1F875DA7003D846B /* LaunchScreen.storyboard */; };
 		FA057CFA1F875DA7003D846B /* pic24Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA057CF91F875DA7003D846B /* pic24Tests.swift */; };
 		FA057D051F875DA7003D846B /* pic24UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA057D041F875DA7003D846B /* pic24UITests.swift */; };
+		FA4700B01F87FEEA001F9B04 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FA4700AF1F87FEEA001F9B04 /* GoogleService-Info.plist */; };
+		FA71216D1F885BA9001AE28B /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA71216C1F885BA9001AE28B /* LoadingViewController.swift */; };
+		FA71216F1F885C0B001AE28B /* LoginSignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA71216E1F885C0B001AE28B /* LoginSignUpViewController.swift */; };
+		FA7121711F885C40001AE28B /* CameraPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7121701F885C40001AE28B /* CameraPage.swift */; };
+		FA7121731F885C84001AE28B /* HomePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7121721F885C84001AE28B /* HomePage.swift */; };
+		FA7121751F885CD6001AE28B /* NotificationsPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7121741F885CD6001AE28B /* NotificationsPage.swift */; };
+		FA7121771F885D56001AE28B /* SettingsPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7121761F885D56001AE28B /* SettingsPage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,7 +66,13 @@
 		FA057D001F875DA7003D846B /* pic24UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = pic24UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA057D041F875DA7003D846B /* pic24UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = pic24UITests.swift; sourceTree = "<group>"; };
 		FA057D061F875DA7003D846B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		FAAE3EBD1F87E77600DCB099 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		FA4700AF1F87FEEA001F9B04 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		FA71216C1F885BA9001AE28B /* LoadingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingViewController.swift; sourceTree = "<group>"; };
+		FA71216E1F885C0B001AE28B /* LoginSignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginSignUpViewController.swift; sourceTree = "<group>"; };
+		FA7121701F885C40001AE28B /* CameraPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraPage.swift; sourceTree = "<group>"; };
+		FA7121721F885C84001AE28B /* HomePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePage.swift; sourceTree = "<group>"; };
+		FA7121741F885CD6001AE28B /* NotificationsPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsPage.swift; sourceTree = "<group>"; };
+		FA7121761F885D56001AE28B /* SettingsPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsPage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,7 +144,10 @@
 				FA057CEB1F875DA7003D846B /* Assets.xcassets */,
 				FA057CED1F875DA7003D846B /* LaunchScreen.storyboard */,
 				FA057CF01F875DA7003D846B /* Info.plist */,
-				FAAE3EBD1F87E77600DCB099 /* GoogleService-Info.plist */,
+				FA4700AF1F87FEEA001F9B04 /* GoogleService-Info.plist */,
+				FA71216C1F885BA9001AE28B /* LoadingViewController.swift */,
+				FA71216E1F885C0B001AE28B /* LoginSignUpViewController.swift */,
+				FA7121781F885D7B001AE28B /* Pages */,
 			);
 			path = pic24;
 			sourceTree = "<group>";
@@ -152,6 +168,17 @@
 				FA057D061F875DA7003D846B /* Info.plist */,
 			);
 			path = pic24UITests;
+			sourceTree = "<group>";
+		};
+		FA7121781F885D7B001AE28B /* Pages */ = {
+			isa = PBXGroup;
+			children = (
+				FA7121701F885C40001AE28B /* CameraPage.swift */,
+				FA7121721F885C84001AE28B /* HomePage.swift */,
+				FA7121741F885CD6001AE28B /* NotificationsPage.swift */,
+				FA7121761F885D56001AE28B /* SettingsPage.swift */,
+			);
+			name = Pages;
 			sourceTree = "<group>";
 		};
 		FD6369173B0B1D5E7F636D6A /* Pods */ = {
@@ -284,6 +311,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FA057CEF1F875DA7003D846B /* LaunchScreen.storyboard in Resources */,
+				FA4700B01F87FEEA001F9B04 /* GoogleService-Info.plist in Resources */,
 				FA057CEC1F875DA7003D846B /* Assets.xcassets in Resources */,
 				FA057CEA1F875DA7003D846B /* Main.storyboard in Resources */,
 			);
@@ -313,15 +341,27 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-pic24/Pods-pic24-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/BoringSSL/openssl.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC/GRPCClient.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC-Core/grpc.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC-ProtoRPC/ProtoRPC.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC-RxLibrary/RxLibrary.framework",
 				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/openssl.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GRPCClient.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpc.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ProtoRPC.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxLibrary.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
@@ -466,8 +506,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA7121751F885CD6001AE28B /* NotificationsPage.swift in Sources */,
+				FA71216F1F885C0B001AE28B /* LoginSignUpViewController.swift in Sources */,
+				FA7121731F885C84001AE28B /* HomePage.swift in Sources */,
+				FA7121771F885D56001AE28B /* SettingsPage.swift in Sources */,
 				FA057CE71F875DA7003D846B /* ViewController.swift in Sources */,
 				FA057CE51F875DA7003D846B /* AppDelegate.swift in Sources */,
+				FA7121711F885C40001AE28B /* CameraPage.swift in Sources */,
+				FA71216D1F885BA9001AE28B /* LoadingViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
