@@ -10,6 +10,8 @@
 import UIKit
 import Firebase
 
+var defaultStore:Firestore!;
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
