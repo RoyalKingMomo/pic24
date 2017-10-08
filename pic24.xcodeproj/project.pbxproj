@@ -11,7 +11,6 @@
 		5BD702B1DB36D5064E193F97 /* Pods_pic24.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38617AD79E6F4190DA597FAA /* Pods_pic24.framework */; };
 		A3335DC43D91EB2B5FE2B542 /* Pods_pic24UITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D22515CD38DE10EC33A6712F /* Pods_pic24UITests.framework */; };
 		FA057CE51F875DA7003D846B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA057CE41F875DA7003D846B /* AppDelegate.swift */; };
-		FA057CE71F875DA7003D846B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA057CE61F875DA7003D846B /* ViewController.swift */; };
 		FA057CEA1F875DA7003D846B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA057CE81F875DA7003D846B /* Main.storyboard */; };
 		FA057CEC1F875DA7003D846B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA057CEB1F875DA7003D846B /* Assets.xcassets */; };
 		FA057CEF1F875DA7003D846B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA057CED1F875DA7003D846B /* LaunchScreen.storyboard */; };
@@ -24,6 +23,12 @@
 		FA7121731F885C84001AE28B /* HomePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7121721F885C84001AE28B /* HomePage.swift */; };
 		FA7121751F885CD6001AE28B /* NotificationsPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7121741F885CD6001AE28B /* NotificationsPage.swift */; };
 		FA7121771F885D56001AE28B /* SettingsPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7121761F885D56001AE28B /* SettingsPage.swift */; };
+		FAA8BBE91F89C290000A4CD6 /* RootSwipeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA8BBE81F89C290000A4CD6 /* RootSwipeViewController.swift */; };
+		FAA8BBEB1F89CEF8000A4CD6 /* CameraPage.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAA8BBEA1F89CEF8000A4CD6 /* CameraPage.xib */; };
+		FAA8BBED1F89CF0B000A4CD6 /* HomePage.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAA8BBEC1F89CF0B000A4CD6 /* HomePage.xib */; };
+		FAA8BBEF1F89CF26000A4CD6 /* NotificationsPage.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAA8BBEE1F89CF26000A4CD6 /* NotificationsPage.xib */; };
+		FAA8BBF11F89CF56000A4CD6 /* SettingsPage.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAA8BBF01F89CF56000A4CD6 /* SettingsPage.xib */; };
+		FAA8BBF31F89E0E9000A4CD6 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA8BBF21F89E0E9000A4CD6 /* Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,7 +60,6 @@
 		D22515CD38DE10EC33A6712F /* Pods_pic24UITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_pic24UITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA057CE11F875DA7003D846B /* pic24.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = pic24.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA057CE41F875DA7003D846B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		FA057CE61F875DA7003D846B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		FA057CE91F875DA7003D846B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FA057CEB1F875DA7003D846B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FA057CEE1F875DA7003D846B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -73,6 +77,12 @@
 		FA7121721F885C84001AE28B /* HomePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePage.swift; sourceTree = "<group>"; };
 		FA7121741F885CD6001AE28B /* NotificationsPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsPage.swift; sourceTree = "<group>"; };
 		FA7121761F885D56001AE28B /* SettingsPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsPage.swift; sourceTree = "<group>"; };
+		FAA8BBE81F89C290000A4CD6 /* RootSwipeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootSwipeViewController.swift; sourceTree = "<group>"; };
+		FAA8BBEA1F89CEF8000A4CD6 /* CameraPage.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CameraPage.xib; sourceTree = "<group>"; };
+		FAA8BBEC1F89CF0B000A4CD6 /* HomePage.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomePage.xib; sourceTree = "<group>"; };
+		FAA8BBEE1F89CF26000A4CD6 /* NotificationsPage.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NotificationsPage.xib; sourceTree = "<group>"; };
+		FAA8BBF01F89CF56000A4CD6 /* SettingsPage.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingsPage.xib; sourceTree = "<group>"; };
+		FAA8BBF21F89E0E9000A4CD6 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,7 +149,8 @@
 			isa = PBXGroup;
 			children = (
 				FA057CE41F875DA7003D846B /* AppDelegate.swift */,
-				FA057CE61F875DA7003D846B /* ViewController.swift */,
+				FAA8BBE81F89C290000A4CD6 /* RootSwipeViewController.swift */,
+				FAA8BBF21F89E0E9000A4CD6 /* Extensions.swift */,
 				FA057CE81F875DA7003D846B /* Main.storyboard */,
 				FA057CEB1F875DA7003D846B /* Assets.xcassets */,
 				FA057CED1F875DA7003D846B /* LaunchScreen.storyboard */,
@@ -177,6 +188,10 @@
 				FA7121721F885C84001AE28B /* HomePage.swift */,
 				FA7121741F885CD6001AE28B /* NotificationsPage.swift */,
 				FA7121761F885D56001AE28B /* SettingsPage.swift */,
+				FAA8BBEA1F89CEF8000A4CD6 /* CameraPage.xib */,
+				FAA8BBEC1F89CF0B000A4CD6 /* HomePage.xib */,
+				FAA8BBEE1F89CF26000A4CD6 /* NotificationsPage.xib */,
+				FAA8BBF01F89CF56000A4CD6 /* SettingsPage.xib */,
 			);
 			name = Pages;
 			sourceTree = "<group>";
@@ -311,9 +326,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				FA057CEF1F875DA7003D846B /* LaunchScreen.storyboard in Resources */,
+				FAA8BBEF1F89CF26000A4CD6 /* NotificationsPage.xib in Resources */,
 				FA4700B01F87FEEA001F9B04 /* GoogleService-Info.plist in Resources */,
 				FA057CEC1F875DA7003D846B /* Assets.xcassets in Resources */,
+				FAA8BBED1F89CF0B000A4CD6 /* HomePage.xib in Resources */,
+				FAA8BBEB1F89CEF8000A4CD6 /* CameraPage.xib in Resources */,
 				FA057CEA1F875DA7003D846B /* Main.storyboard in Resources */,
+				FAA8BBF11F89CF56000A4CD6 /* SettingsPage.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -507,10 +526,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				FA7121751F885CD6001AE28B /* NotificationsPage.swift in Sources */,
+				FAA8BBF31F89E0E9000A4CD6 /* Extensions.swift in Sources */,
 				FA71216F1F885C0B001AE28B /* LoginSignUpViewController.swift in Sources */,
 				FA7121731F885C84001AE28B /* HomePage.swift in Sources */,
+				FAA8BBE91F89C290000A4CD6 /* RootSwipeViewController.swift in Sources */,
 				FA7121771F885D56001AE28B /* SettingsPage.swift in Sources */,
-				FA057CE71F875DA7003D846B /* ViewController.swift in Sources */,
 				FA057CE51F875DA7003D846B /* AppDelegate.swift in Sources */,
 				FA7121711F885C40001AE28B /* CameraPage.swift in Sources */,
 				FA71216D1F885BA9001AE28B /* LoadingViewController.swift in Sources */,
