@@ -8,6 +8,6 @@
 
 import UIKit
 
-class NotificationPage : UIViewController {
+class NotificationsPage : UIViewController {
     // Make a notifications page
 }
