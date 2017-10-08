@@ -34,4 +34,3 @@ func formatFromDate (dateObj:Date) -> String {
     dateFormatter.dateFormat = "EEE, dd MMM yyyy hh:mm"
     return "\(dateFormatter.string(from: dateObj))"
 }
-

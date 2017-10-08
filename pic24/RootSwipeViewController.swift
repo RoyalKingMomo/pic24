@@ -17,8 +17,7 @@ var currentIndex = 1
 class CustomScrollView: UIScrollView{
     
     func initSelf() {
-        self.isScrollEnabled = false;
-        self.tag = 0107
+        self.isScrollEnabled = false
     }
     
 }

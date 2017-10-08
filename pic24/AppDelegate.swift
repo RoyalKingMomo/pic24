@@ -4,6 +4,7 @@
 //
 //  Created by Mohammad Al-Ahdal on 2017-10-06.
 //  Copyright © 2017 Mohammad Al-Ahdal. All rights reserved.
+//  Color Pallet 1: https://coolors.co/134074-13315c-0b2545-8da9c4-eef4ed
 //
 
 import UIKit
@@ -17,7 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        FirebaseApp.configure();
+        FirebaseApp.configure()
         
         return true
     }
