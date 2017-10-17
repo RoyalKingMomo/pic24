@@ -29,8 +29,6 @@ var fs:Firestore! = Firestore.firestore()
 var fsUsersCollection = fs.collection("users")
 var fsCurrentUser = fsUsersCollection.document(currentUser.uid)
 
-
-
 class FSUser {
     var uid:String
     var name: String
@@ -45,9 +43,9 @@ class FSUser {
         self.uid = user.uid
         self.name = fsUsersCollection.document(user.uid).value(forKey: "name") as! String
         self.username = fsUsersCollection.document(user.uid).value(forKey: "username") as! String
-        self.theme = 0x01
-        self.score = 0xFF
-        self.postsCollection = ["shite":FSPost(), "moom":FSPost()]
+        self.theme = fsUsersCollection.document(user.uid).value(forKey: "theme") as! Int
+        self.score = fsUsersCollection.document(user.uid).value(forKey: "score") as! Int
+        self.postsCollection = ["shite":FSPost(), "moom":FSPost()]                                              // FIX THIS
         if fsUsersCollection.document(user.uid).value(forKey: "joinDate") != nil {
             self.joinDate = fsUsersCollection.document(user.uid).value(forKey: "joinDate") as? Date
         }
@@ -127,6 +125,8 @@ func performLogin() {
             print(error!.localizedDescription)
         }else{
             currentUser = user!
+            performFSSetup()
+            tempFillerSetup()
         }
     })
 }
@@ -138,3 +138,14 @@ func performFSSetup(){
     fsCurrentUser = fsUsersCollection.document(currentUser.uid)
 }
 
+func tempFillerSetup() {
+    fsCurrentUser.setData([
+        "name"          : "Mohammad Al-Ahdal",
+        "score"         : 0xFF,
+        "theme"         : 0x01,
+        "username"      : "mkaa00x",
+        "dateOfBirth"   : NSDate.init(timeIntervalSinceNow: 0.0),
+        "joinDate"      : NSDate.init(timeIntervalSinceNow: 0.0)
+        ])
+    
+}
