@@ -6,13 +6,30 @@
 //  Copyright © 2017 Mohammad Al-Ahdal. All rights reserved.
 //
 
+/*
+ 
+ Each time you want to add just some general information, the process works such that you have to either:
+     1. Specify .document("documentID").setData(["Data" : data]) // if you want a custom documentID
+     2. Do ref = (...).addDocument(["Data":data]) // if you want to randomize the documentID
+ 
+ */
+
+
+
 import Firebase
 
-var currentUser:User = Auth.auth().currentUser!
 
-var fs = Firestore.firestore()
+
+//  FirebaseAuth Variables
+var firAuth:Auth = Auth.auth()
+var currentUser:User = firAuth.currentUser!
+
+//  FireStore Variables
+var fs:Firestore! = Firestore.firestore()
 var fsUsersCollection = fs.collection("users")
 var fsCurrentUser = fsUsersCollection.document(currentUser.uid)
+
+
 
 class FSUser {
     var uid:String
@@ -102,3 +119,22 @@ class FSCommentReaction {
         self.reactionType = 1
     }
 }
+
+//  PLEASE NOTE: THIS IS A TEMPORARY LOGIN
+func performLogin() {
+    firAuth.signIn(withEmail: "m@rz.ca", password: "RRRZZZ", completion: {(user, error) in
+        if error != nil {
+            print(error!.localizedDescription)
+        }else{
+            currentUser = user!
+        }
+    })
+}
+//  PLEASE NOTE: THIS IS A TEMPORARY LOGIN
+
+func performFSSetup(){
+    fs = Firestore.firestore()
+    fsUsersCollection = fs.collection("users")
+    fsCurrentUser = fsUsersCollection.document(currentUser.uid)
+}
+
