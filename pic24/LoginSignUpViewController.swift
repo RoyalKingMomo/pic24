@@ -11,17 +11,23 @@ import UIKit
 class LoginSignUpViewController: UIViewController {
     //Create login
     
-    override func viewDidLoad() {
-        self.hideKeyboardWhenTappedAround();
-    }
+    @IBOutlet weak var signUpButton: CustomButton!
+    @IBOutlet weak var loginButton: UIButton!
+    @IBOutlet weak var emailTextField: UITextField!
+    @IBOutlet weak var passwordTextField: UITextField!
     
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        self.performSegue(withIdentifier: "authSuccess", sender: self)
+    override func viewDidLoad() {
+        self.hideKeyboardWhenTappedAround()
+        self.signUpButton.setup()
     }
     
 }
 
 class CustomButton: UIView {
+    
+    func setup(){
+        self.roundCorners(UIRectCorner.allCorners, radius: 200)
+    }
     
     var onPress: () -> Void  = {};
     

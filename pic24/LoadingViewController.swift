@@ -9,5 +9,11 @@
 import UIKit
 
 class LoadingViewController: UIViewController {
-    //make a loading screen
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        for _ in touches {
+            self.performSegue(withIdentifier: "loadingPageSuccess", sender: self)
+        }
+    }
+    
 }

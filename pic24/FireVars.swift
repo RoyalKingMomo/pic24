@@ -21,37 +21,73 @@ import Firebase
 
 
 //  FirebaseAuth Variables
-var firAuth:Auth = Auth.auth()
-var currentUser:User = firAuth.currentUser!
+var firAuth:Auth!
+var currentUser:User!
 
 //  FireStore Variables
-var fs:Firestore! = Firestore.firestore()
-var fsUsersCollection = fs.collection("users")
-var fsCurrentUser = fsUsersCollection.document(currentUser.uid)
+var fs:Firestore!
+var fsUsersCollection:CollectionReference!
+var fsCurrentUser:DocumentReference!
+
+//Custom Class Variables
+var temporaryFSUser:FSUser!
 
 class FSUser {
     var uid:String
-    var name: String
-    var dateOfBirth: Date?
-    var joinDate: Date?
-    var username: String
-    var theme: Int
-    var score: Int
-    var postsCollection: [String:FSPost]
+    var name: String!
+    var dateOfBirth: Date!
+    var joinDate: Date!
+    var username: String!
+    var theme: Int!
+    var score: Int!
+    var postsCollection: [String : FSPost]!
+    var userDocument:DocumentReference
     
     init(user: User) {
         self.uid = user.uid
-        self.name = fsUsersCollection.document(user.uid).value(forKey: "name") as! String
-        self.username = fsUsersCollection.document(user.uid).value(forKey: "username") as! String
-        self.theme = fsUsersCollection.document(user.uid).value(forKey: "theme") as! Int
-        self.score = fsUsersCollection.document(user.uid).value(forKey: "score") as! Int
-        self.postsCollection = ["shite":FSPost(), "moom":FSPost()]                                              // FIX THIS
-        if fsUsersCollection.document(user.uid).value(forKey: "joinDate") != nil {
-            self.joinDate = fsUsersCollection.document(user.uid).value(forKey: "joinDate") as? Date
-        }
-        if fsUsersCollection.document(user.uid).value(forKey: "dateOfBirth") != nil {
-            self.dateOfBirth = fsUsersCollection.document(user.uid).value(forKey: "dateOfBirth") as? Date
-        }
+        self.userDocument = fsUsersCollection.document(user.uid)
+        
+        var name: String!
+        var dateOfBirth: Date!
+        var joinDate: Date!
+        var username: String!
+        var theme: Int!
+        var score: Int!
+        
+        self.userDocument.getDocument(completion: {(documentSnapshot, error) in
+            if documentSnapshot != nil {
+                name = documentSnapshot!.data()["name"] as! String
+                dateOfBirth = documentSnapshot!.data()["dateOfBirth"] as! Date
+                joinDate = documentSnapshot!.data()["joinDate"] as! Date
+                username = documentSnapshot!.data()["username"] as! String
+                theme = documentSnapshot!.data()["theme"] as! Int
+                score = documentSnapshot!.data()["score"] as! Int
+                self.name = name
+                self.dateOfBirth = dateOfBirth
+                self.joinDate = joinDate
+                self.username = username
+                self.theme = theme
+                self.score = score
+            }else{
+                print(error!.localizedDescription)
+            }
+            
+        })
+        
+    }
+    
+    func pullPosts()/* -> [String : FSPost]*/{
+        userDocument.collection("posts").order(by: "dateOfPost").getDocuments(completion: {(querySnapshot, error) in
+            if error == nil {
+                for i in 0...querySnapshot!.documents.count-1{
+                    let n = querySnapshot!.documents.count-i-1
+                    // using n gives you most recent post if you sort by "dateOfPost"
+                    print(querySnapshot!.documents[n].documentID)
+                }
+            }else{
+                print(error!.localizedDescription)
+            }
+        })
     }
 }
 
@@ -119,14 +155,18 @@ class FSCommentReaction {
 }
 
 //  PLEASE NOTE: THIS IS A TEMPORARY LOGIN
-func performLogin() {
-    firAuth.signIn(withEmail: "m@rz.ca", password: "RRRZZZ", completion: {(user, error) in
+func performLogin(email: String, password: String ) {
+    firAuth = Auth.auth()
+    firAuth.signIn(withEmail: email, password: password, completion: {(user, error) in
         if error != nil {
             print(error!.localizedDescription)
         }else{
             currentUser = user!
             performFSSetup()
             tempFillerSetup()
+            let swag = FSUser.init(user: currentUser)
+            swag.pullPosts()
+            print(user!.email!)
         }
     })
 }
@@ -135,10 +175,16 @@ func performLogin() {
 func performFSSetup(){
     fs = Firestore.firestore()
     fsUsersCollection = fs.collection("users")
-    fsCurrentUser = fsUsersCollection.document(currentUser.uid)
+    if currentUser == nil {
+        print("userNotLoggedIn")
+    } else {
+        fsCurrentUser = fsUsersCollection.document(currentUser.uid)
+    }
+    
 }
 
 func tempFillerSetup() {
+    print(fsCurrentUser.documentID)
     fsCurrentUser.setData([
         "name"          : "Mohammad Al-Ahdal",
         "score"         : 0xFF,

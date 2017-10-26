@@ -25,7 +25,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         
         // WARNING: TEMPORARY
-        performLogin()
+        performLogin(email: "a@rz.ca", password: "RRRZZZ");
+        
+        
+        /*
+        for i in 0...10 {
+            let newDocRef = fsCurrentUser.collection("posts").document()
+            newDocRef.setData([
+                "dateOfPost": Date().addingTimeInterval(Double(i)),
+                "timeOut": i,
+                "mediaType": "Video",
+                "url": "https://thisjjjjjjjjsFakeASF.ca/\(newDocRef.path).jpg"
+                ])
+        }*/
         
         return true
     }
