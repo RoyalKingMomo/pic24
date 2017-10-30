@@ -54,6 +54,31 @@
             </objects>
             <point key="canvasLocation" x="2180" y="203"/>
         </scene>
+        <!--Sign Up Finish View Controller-->
+        <scene sceneID="JoW-I5-kw0">
+            <objects>
+                <viewController id="mr9-2f-iVx" customClass="SignUpFinishViewController" customModule="pic24" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Mxh-MF-sKD">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="loginWallpaper" translatesAutoresizingMaskIntoConstraints="NO" id="Mu9-NA-GjZ">
+                                <rect key="frame" x="0.0" y="-265.5" width="375" height="1218"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Mu9-NA-GjZ" firstAttribute="centerX" secondItem="tgs-4t-TCL" secondAttribute="centerX" id="TE3-bg-D4R"/>
+                            <constraint firstItem="Mu9-NA-GjZ" firstAttribute="width" secondItem="Mxh-MF-sKD" secondAttribute="height" multiplier="375:667" id="agT-cb-GoW"/>
+                            <constraint firstItem="Mu9-NA-GjZ" firstAttribute="centerY" secondItem="tgs-4t-TCL" secondAttribute="centerY" id="hrS-Cp-gTV"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="tgs-4t-TCL"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5qX-2S-KAd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1449" y="920"/>
+        </scene>
         <!--Login Sign Up View Controller-->
         <scene sceneID="5bM-j8-qdB">
             <objects>
@@ -63,44 +88,48 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="loginWallpaper" translatesAutoresizingMaskIntoConstraints="NO" id="FEr-8g-70h">
-                                <rect key="frame" x="0.0" y="-255" width="375" height="1197"/>
+                                <rect key="frame" x="0.0" y="-265.5" width="375" height="1218"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Pic24White" translatesAutoresizingMaskIntoConstraints="NO" id="EAk-dv-aYe">
+                                <rect key="frame" x="130" y="73" width="114" height="61"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email Address" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UTu-I2-g4R">
-                                <rect key="frame" x="66" y="281" width="242" height="30"/>
+                                <rect key="frame" x="66" y="203" width="242" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" white="1" alpha="0.5034936179577465" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <textInputTraits key="textInputTraits" textContentType="email"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="color" keyPath="_placeholderLabel.textColor">
-                                        <color key="value" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="value" red="1" green="1" blue="1" alpha="0.15140845070422534" colorSpace="custom" customColorSpace="sRGB"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JBp-P5-1Ww">
-                                <rect key="frame" x="66" y="328" width="242" height="30"/>
+                                <rect key="frame" x="66" y="255" width="242" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" white="1" alpha="0.5" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="color" keyPath="_placeholderLabel.textColor">
-                                        <color key="value" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="value" red="1" green="1" blue="1" alpha="0.15140845070422534" colorSpace="custom" customColorSpace="sRGB"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </textField>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="W6s-nU-js4">
-                                <rect key="frame" x="56" y="310" width="263" height="1"/>
+                                <rect key="frame" x="56" y="232" width="263" height="1"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" white="1" alpha="0.20067671654929578" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="feW-3v-ioI">
-                                <rect key="frame" x="56" y="357" width="263" height="1"/>
+                                <rect key="frame" x="56" y="284" width="263" height="1"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" white="1" alpha="0.19718309859154928" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WVQ-oY-EgY" customClass="CustomButton" customModule="pic24" customModuleProvider="target">
-                                <rect key="frame" x="56" y="385" width="263" height="53"/>
+                                <rect key="frame" x="56" y="307" width="263" height="53"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Sign Up" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PkE-nI-dmp">
@@ -111,17 +140,20 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
-                                <color key="backgroundColor" red="0.11878184777411789" green="0.51883230895212595" blue="0.70727412564766845" alpha="0.74997249119718312" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.0" green="0.95456148343489566" blue="1" alpha="0.20067671654929578" colorSpace="custom" customColorSpace="sRGB"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" button="YES"/>
+                                </accessibility>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Already have an account?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b9d-BA-8MC">
-                                <rect key="frame" x="76" y="439" width="196" height="21"/>
+                                <rect key="frame" x="76" y="361" width="196" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rh3-CC-L5J">
-                                <rect key="frame" x="256" y="434" width="42" height="30"/>
+                                <rect key="frame" x="256" y="356" width="42" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Login!">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -142,6 +174,7 @@
                         <outlet property="passwordTextField" destination="JBp-P5-1Ww" id="z9v-JL-7qQ"/>
                         <outlet property="signUpButton" destination="WVQ-oY-EgY" id="BxL-dt-lGP"/>
                         <segue destination="PMo-PR-bCb" kind="show" identifier="authSuccess" id="DMY-da-6sm"/>
+                        <segue destination="mr9-2f-iVx" kind="show" identifier="toFinishSignUp" id="KVu-oT-dcV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iD1-pb-KGW" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -150,6 +183,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="loginWallpaper" width="673" height="1197"/>
+        <image name="Pic24White" width="393" height="203"/>
+        <image name="loginWallpaper" width="562" height="1218"/>
     </resources>
 </document>

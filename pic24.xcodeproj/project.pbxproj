@@ -17,6 +17,7 @@
 		FA057CFA1F875DA7003D846B /* pic24Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA057CF91F875DA7003D846B /* pic24Tests.swift */; };
 		FA057D051F875DA7003D846B /* pic24UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA057D041F875DA7003D846B /* pic24UITests.swift */; };
 		FA0790ED1F8C0AB200BDB01E /* FireVars.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0790EC1F8C0AB200BDB01E /* FireVars.swift */; };
+		FA45BEB81FA3EC4C0033141A /* SignUpFinishViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA45BEB71FA3EC4C0033141A /* SignUpFinishViewController.swift */; };
 		FA4700B01F87FEEA001F9B04 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FA4700AF1F87FEEA001F9B04 /* GoogleService-Info.plist */; };
 		FA71216D1F885BA9001AE28B /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA71216C1F885BA9001AE28B /* LoadingViewController.swift */; };
 		FA71216F1F885C0B001AE28B /* LoginSignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA71216E1F885C0B001AE28B /* LoginSignUpViewController.swift */; };
@@ -72,6 +73,7 @@
 		FA057D041F875DA7003D846B /* pic24UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = pic24UITests.swift; sourceTree = "<group>"; };
 		FA057D061F875DA7003D846B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FA0790EC1F8C0AB200BDB01E /* FireVars.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FireVars.swift; sourceTree = "<group>"; };
+		FA45BEB71FA3EC4C0033141A /* SignUpFinishViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpFinishViewController.swift; sourceTree = "<group>"; };
 		FA4700AF1F87FEEA001F9B04 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		FA71216C1F885BA9001AE28B /* LoadingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingViewController.swift; sourceTree = "<group>"; };
 		FA71216E1F885C0B001AE28B /* LoginSignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginSignUpViewController.swift; sourceTree = "<group>"; };
@@ -161,6 +163,7 @@
 				FA4700AF1F87FEEA001F9B04 /* GoogleService-Info.plist */,
 				FA71216C1F885BA9001AE28B /* LoadingViewController.swift */,
 				FA71216E1F885C0B001AE28B /* LoginSignUpViewController.swift */,
+				FA45BEB71FA3EC4C0033141A /* SignUpFinishViewController.swift */,
 				FA7121781F885D7B001AE28B /* Pages */,
 			);
 			path = pic24;
@@ -535,6 +538,7 @@
 				FA7121731F885C84001AE28B /* HomePage.swift in Sources */,
 				FAA8BBE91F89C290000A4CD6 /* RootSwipeViewController.swift in Sources */,
 				FA7121771F885D56001AE28B /* SettingsPage.swift in Sources */,
+				FA45BEB81FA3EC4C0033141A /* SignUpFinishViewController.swift in Sources */,
 				FA057CE51F875DA7003D846B /* AppDelegate.swift in Sources */,
 				FA7121711F885C40001AE28B /* CameraPage.swift in Sources */,
 				FA71216D1F885BA9001AE28B /* LoadingViewController.swift in Sources */,

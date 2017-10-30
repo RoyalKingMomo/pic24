@@ -19,6 +19,9 @@ class LoginSignUpViewController: UIViewController {
     override func viewDidLoad() {
         self.hideKeyboardWhenTappedAround()
         self.signUpButton.setup()
+        self.signUpButton.onPress = {
+            self.performSegue(withIdentifier: "toFinishSignUp", sender: self)
+        }
     }
     
 }
@@ -26,7 +29,7 @@ class LoginSignUpViewController: UIViewController {
 class CustomButton: UIView {
     
     func setup(){
-        self.roundCorners(UIRectCorner.allCorners, radius: 200)
+        self.roundCorners(UIRectCorner.allCorners, radius: 5)
     }
     
     var onPress: () -> Void  = {};
