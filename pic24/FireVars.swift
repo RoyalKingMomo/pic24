@@ -159,7 +159,15 @@ func performLogin(email: String, password: String, completion: @escaping () -> V
     firAuth = Auth.auth()
     firAuth.signIn(withEmail: email, password: password, completion: {(user, error) in
         if error != nil {
-            print(error!.localizedDescription)
+            let alertController = UIAlertController(title: "Ooops!", message: error!.localizedDescription, preferredStyle: UIAlertControllerStyle.alert)
+            alertController.addAction(UIAlertAction(title: "Gotcha!", style: UIAlertActionStyle.default, handler: nil))
+            if var topController = UIApplication.shared.keyWindow?.rootViewController {
+                while let presentedViewController = topController.presentedViewController {
+                    topController = presentedViewController
+                }
+                topController.present(alertController, animated: true, completion: nil)
+                // topController should now be your topmost view controller
+            }
         }else{
             currentUser = user!
             performFSSetup()
@@ -173,20 +181,33 @@ func performSignUp(email: String, password: String, completion: @escaping () -> 
     firAuth = Auth.auth()
     firAuth.createUser(withEmail: email, password: password, completion:{ (user, error) in
         if error != nil{
-            print(error!.localizedDescription)
+            let alertController = UIAlertController(title: "Ooops!", message: error!.localizedDescription, preferredStyle: UIAlertControllerStyle.alert)
+            alertController.addAction(UIAlertAction(title: "Gotcha!", style: UIAlertActionStyle.default, handler: nil))
+            if var topController = UIApplication.shared.keyWindow?.rootViewController {
+                while let presentedViewController = topController.presentedViewController {
+                    topController = presentedViewController
+                }
+                topController.present(alertController, animated: true, completion: nil)
+                // topController should now be your topmost view controller
+            }
         }else{
             currentUser = user!
             performFSSetup()
-            tempFillerSetup()
             print(user!.email!)
-            fillUserDataOnSignUp()
             completion()
         }
     })
 }
 
-func fillUserDataOnSignUp (){
-    
+func fillUserDataOnSignUp (name: String, username: String, dateOfBirth: Date){
+    fsCurrentUser.setData([
+        "name"          : name,
+        "score"         : 0x00,
+        "theme"         : 0x01,
+        "username"      : username,
+        "dateOfBirth"   : NSDate.init(timeInterval: 0, since: dateOfBirth),
+        "joinDate"      : NSDate.init(timeIntervalSinceNow: 0.0)
+        ])
 }
 
 func performFSSetup(){
@@ -197,18 +218,5 @@ func performFSSetup(){
     } else {
         fsCurrentUser = fsUsersCollection.document(currentUser.uid)
     }
-    
-}
-
-func tempFillerSetup() {
-    print(fsCurrentUser.documentID)
-    fsCurrentUser.setData([
-        "name"          : "Mohammad \(arc4random())",
-        "score"         : 0xFF,
-        "theme"         : 0x01,
-        "username"      : "mkaa00\(arc4random())",
-        "dateOfBirth"   : NSDate.init(timeIntervalSinceNow: 0.0),
-        "joinDate"      : NSDate.init(timeIntervalSinceNow: 0.0)
-        ])
     
 }

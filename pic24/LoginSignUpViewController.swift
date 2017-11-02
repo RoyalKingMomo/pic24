@@ -32,6 +32,12 @@ class LoginSignUpViewController: UIViewController {
     @IBOutlet weak var passwordUnderline: UIView!
     @IBOutlet weak var pic24Logo: UIImageView!
     @IBOutlet weak var backButton: UIButton!
+    @IBOutlet weak var birthDatePicker: UIDatePicker!
+    @IBOutlet weak var nameTextField: UITextField!
+    @IBOutlet weak var nameUnderline: UIView!
+    @IBOutlet weak var usernameTextField: UITextField!
+    @IBOutlet weak var usernameUnderline: UIView!
+    @IBOutlet weak var birthLabel: UILabel!
     
     override func viewDidLoad() {
         self.hideKeyboardWhenTappedAround()
@@ -49,6 +55,7 @@ class LoginSignUpViewController: UIViewController {
                     self.emailUnderline.backgroundColor! = self.colOfEmailUnderline
                 })
             }else{
+                emailCheck = false
                 UIView.animate(withDuration: 0.3, animations: {
                     self.emailUnderline.backgroundColor! = UIColor.init(hex: 0xCC2222).withAlphaComponent(0.5)
                 })
@@ -59,6 +66,7 @@ class LoginSignUpViewController: UIViewController {
                     self.passwordUnderline.backgroundColor! = self.colOfPasswordUnderline
                 })
             }else{
+                passwordCheck = false
                 UIView.animate(withDuration: 0.3, animations: {
                     self.passwordUnderline.backgroundColor! = UIColor.init(hex: 0xCC2222).withAlphaComponent(0.5)
                 })
@@ -68,11 +76,40 @@ class LoginSignUpViewController: UIViewController {
                 if self.state == 1 {
                     self.stateChanger(toState: 2)
                 }else if self.state == 2{
-                    //Actually Perform SignUp
-                    performSignUp(email: self.emailTextField.text!, password: self.passwordTextField.text!, completion: {
-                        //perform Segue
-                        self.performSegue(withIdentifier: "authSuccess", sender: self)
-                    })
+                    var usernameCheck: Bool = false
+                    var nameCheck: Bool = false
+                    if self.usernameTextField.text!.isValidUsername() {
+                        usernameCheck = true
+                        UIView.animate(withDuration: 0.3, animations: {
+                            self.usernameUnderline.backgroundColor! = self.colOfEmailUnderline
+                        })
+                    }else{
+                        usernameCheck = false
+                        UIView.animate(withDuration: 0.3, animations: {
+                            self.usernameUnderline.backgroundColor! = UIColor.init(hex: 0xCC2222).withAlphaComponent(0.5)
+                        })
+                    }
+                    if self.nameTextField.text! != "" {
+                        nameCheck = true
+                        UIView.animate(withDuration: 0.3, animations: {
+                            self.nameUnderline.backgroundColor! = self.colOfPasswordUnderline
+                        })
+                    }else{
+                        nameCheck = false
+                        UIView.animate(withDuration: 0.3, animations: {
+                            self.nameUnderline.backgroundColor! = UIColor.init(hex: 0xCC2222).withAlphaComponent(0.5)
+                        })
+                    }
+                    
+                    if usernameCheck && nameCheck {
+                        //Actually Perform Signup
+                        performSignUp(email: self.emailTextField.text!, password: self.passwordTextField.text!, completion: {
+                            //Add vars
+                            fillUserDataOnSignUp(name: self.nameTextField.text!, username: self.usernameTextField.text!, dateOfBirth: self.birthDatePicker.date)
+                            //perform Segue
+                            self.performSegue(withIdentifier: "authSuccess", sender: self)
+                        })
+                    }
                 }
             }
         }
@@ -189,6 +226,23 @@ class LoginSignUpViewController: UIViewController {
         self.signUpAlternativeButton.frame.origin.x -= self.view.frame.width
         self.signUpAlternativeLabel.frame.origin.x -= self.view.frame.width
         self.backButton.alpha -= 1
+        self.birthDatePicker.alpha -= 1
+        self.birthLabel.alpha -= 1
+        self.nameTextField.alpha -= 1
+        self.usernameTextField.alpha -= 1
+        self.usernameUnderline.alpha -= 1
+        self.nameUnderline.alpha -= 1
+        var comp  = DateComponents.init()
+        comp.year = -150
+        self.birthDatePicker.minimumDate = NSCalendar.init(identifier: NSCalendar.Identifier.gregorian)!.date(byAdding: comp, to: Date.init(), options: NSCalendar.Options.init(rawValue: 0))
+        comp.year = -13
+        self.birthDatePicker.maximumDate = NSCalendar.init(identifier: NSCalendar.Identifier.gregorian)!.date(byAdding: comp, to: Date.init(), options: NSCalendar.Options.init(rawValue: 0))
+        self.birthDatePicker.setValue(UIColor.white, forKeyPath: "textColor")
+        self.birthDatePicker.setValue(false, forKeyPath: "highlightsToday")
+        
+        //TEMP
+        self.emailTextField.text! = "malalalal@ualabsss.ca"
+        self.passwordTextField.text! = "321uids"
     }
     
     func signUpStartToLogin () {
@@ -213,18 +267,29 @@ class LoginSignUpViewController: UIViewController {
         
     }
     func signUpEndToSignUpStart () {
-        UIView.animate(withDuration: 0.300, animations: {
-            self.pic24Logo.frame.origin.y += (self.pic24Logo.frame.height + self.pic24Logo.frame.minY)
-            self.emailUnderline.frame.origin.y += (self.posOfEmailUnderline - self.view.frame.height/32 - self.emailTextField.frame.height)
-            self.emailTextField.frame.origin.y += (self.posOfEmailTextField - self.view.frame.height/32)
-            self.emailUnderline.alpha += 1
-            self.passwordTextField.alpha += 1
-            self.passwordUnderline.alpha += 1
-            self.signUpButton.frame.origin.y -= (-self.posOfSignUpButton + self.view.frame.height*5/6)
-            self.emailTextField.isEnabled = true
-            self.loginAlternativeLabel.alpha += 1
-            self.loginAlternativeButton.alpha += 1
+        UIView.animate(withDuration: 0.3, animations: {
             self.backButton.alpha -= 1
+        })
+        UIView.animate(withDuration: 0.5, animations: {
+            self.birthDatePicker.alpha -= 1
+            self.birthLabel.alpha -= 1
+            self.nameTextField.alpha -= 1
+            self.usernameTextField.alpha -= 1
+            self.usernameUnderline.alpha -= 1
+            self.nameUnderline.alpha -= 1
+        }, completion: { (uneeded) in
+            UIView.animate(withDuration: 0.3, animations: {
+                self.pic24Logo.frame.origin.y += (self.pic24Logo.frame.height + self.pic24Logo.frame.minY)
+                self.emailUnderline.frame.origin.y += (self.posOfEmailUnderline - self.view.frame.height/32 - self.emailTextField.frame.height)
+                self.emailTextField.frame.origin.y += (self.posOfEmailTextField - self.view.frame.height/32)
+                self.emailUnderline.alpha += 1
+                self.passwordTextField.alpha += 1
+                self.passwordUnderline.alpha += 1
+                self.signUpButton.frame.origin.y -= (-self.posOfSignUpButton + self.view.frame.height*5/6)
+                self.emailTextField.isEnabled = true
+                self.loginAlternativeLabel.alpha += 1
+                self.loginAlternativeButton.alpha += 1
+            })
         })
     }
     func signUpStartToSignUpEnd () {
@@ -240,6 +305,15 @@ class LoginSignUpViewController: UIViewController {
             self.loginAlternativeLabel.alpha -= 1
             self.loginAlternativeButton.alpha -= 1
             self.backButton.alpha += 1
+        }, completion: { (uneeded) in
+            UIView.animate(withDuration: 0.5, animations: {
+                self.birthDatePicker.alpha += 1
+                self.birthLabel.alpha += 1
+                self.nameTextField.alpha += 1
+                self.usernameTextField.alpha += 1
+                self.usernameUnderline.alpha += 1
+                self.nameUnderline.alpha += 1
+            })
         })
     }
     

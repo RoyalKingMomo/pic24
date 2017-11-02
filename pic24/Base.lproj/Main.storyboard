@@ -184,6 +184,54 @@
                                     <action selector="backButtonPressed:" destination="7PG-ZQ-e1X" eventType="touchUpInside" id="Ez9-pq-Kf3"/>
                                 </connections>
                             </button>
+                            <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="dRM-ba-TQN">
+                                <rect key="frame" x="0.0" y="323" width="375" height="162"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <date key="date" timeIntervalSinceReferenceDate="531274823.83607298">
+                                    <!--2017-11-02 00:20:23 +0000-->
+                                </date>
+                            </datePicker>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Full Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9Oo-oz-ruw">
+                                <rect key="frame" x="65" y="203" width="245" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="textColor" red="0.99847603589934786" green="1" blue="1" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="_placeholderLabel.textColor">
+                                        <color key="value" red="1" green="1" blue="1" alpha="0.1514084507" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TLz-YE-d3M">
+                                <rect key="frame" x="66" y="255" width="244" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="textColor" white="1" alpha="0.5" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="_placeholderLabel.textColor">
+                                        <color key="value" red="1" green="1" blue="1" alpha="0.1514084507" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </textField>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="m01-X4-te9">
+                                <rect key="frame" x="56" y="284" width="263" height="1"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="0.1971830986" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Date of Birth" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DJv-i7-aeN">
+                                <rect key="frame" x="56" y="313" width="97" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eSs-fN-3q8">
+                                <rect key="frame" x="56" y="232" width="263" height="1"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="0.20067671649999999" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -201,17 +249,23 @@
                     </view>
                     <connections>
                         <outlet property="backButton" destination="fmm-2F-eMN" id="Xhz-Ie-vZj"/>
+                        <outlet property="birthDatePicker" destination="dRM-ba-TQN" id="0uq-zz-mEl"/>
+                        <outlet property="birthLabel" destination="DJv-i7-aeN" id="zM6-jC-g4Q"/>
                         <outlet property="emailTextField" destination="UTu-I2-g4R" id="jWo-7p-ixV"/>
                         <outlet property="emailUnderline" destination="W6s-nU-js4" id="ArT-lb-f2d"/>
                         <outlet property="loginAlternativeButton" destination="rh3-CC-L5J" id="dXC-h2-BOB"/>
                         <outlet property="loginAlternativeLabel" destination="b9d-BA-8MC" id="cf2-MG-ZLR"/>
                         <outlet property="loginButton" destination="WmN-gF-787" id="iSB-LR-ZuR"/>
+                        <outlet property="nameTextField" destination="9Oo-oz-ruw" id="3Mc-62-lSa"/>
+                        <outlet property="nameUnderline" destination="eSs-fN-3q8" id="lqr-ao-lWr"/>
                         <outlet property="passwordTextField" destination="JBp-P5-1Ww" id="z9v-JL-7qQ"/>
                         <outlet property="passwordUnderline" destination="feW-3v-ioI" id="L85-24-FEQ"/>
                         <outlet property="pic24Logo" destination="EAk-dv-aYe" id="Vfa-WS-vBx"/>
                         <outlet property="signUpAlternativeButton" destination="HuQ-Cf-FId" id="Ker-b0-5Ke"/>
                         <outlet property="signUpAlternativeLabel" destination="GNc-Yi-9P4" id="GcT-wk-wDq"/>
                         <outlet property="signUpButton" destination="WVQ-oY-EgY" id="BxL-dt-lGP"/>
+                        <outlet property="usernameTextField" destination="TLz-YE-d3M" id="neV-Ze-O6U"/>
+                        <outlet property="usernameUnderline" destination="m01-X4-te9" id="CXL-Fb-ES2"/>
                         <segue destination="PMo-PR-bCb" kind="show" identifier="authSuccess" id="DMY-da-6sm"/>
                     </connections>
                 </viewController>
@@ -225,6 +279,6 @@
         <image name="loginWallpaper" width="562" height="1218"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="SU1-Gp-z5u"/>
+        <segue reference="DMY-da-6sm"/>
     </inferredMetricsTieBreakers>
 </document>

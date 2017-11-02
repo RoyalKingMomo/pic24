@@ -50,4 +50,10 @@ extension String {
         let emailTest = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
         return emailTest.evaluate(with: self)
     }
+    func isValidUsername() -> Bool {
+        let usernameRegEx = "[A-Za-z]{1,32}"
+        
+        let usernameTest = NSPredicate(format:"SELF MATCHES %@", usernameRegEx)
+        return usernameTest.evaluate(with: self)
+    }
 }
