@@ -63,6 +63,10 @@ class RootSwipeViewController : UIViewController {
         
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        currentIndex = 1 // make sure view resets to index = 1 when readded
+    }
+    
     func setupScroll(){
         
         let leftGesture:UISwipeGestureRecognizer = UISwipeGestureRecognizer(target: self, action: #selector(goLeft))
