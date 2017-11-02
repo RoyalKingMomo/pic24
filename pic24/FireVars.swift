@@ -155,8 +155,10 @@ class FSCommentReaction {
 }
 
 func attemptAutoLogin (successToDo: @escaping () -> Void, failToDo: @escaping () -> Void) {
-    if let alreadySignedIn = Auth.auth().currentUser {
-        print(alreadySignedIn.email!)
+    firAuth = Auth.auth()
+    if let nowsUser = Auth.auth().currentUser {
+        print("Current User Email Adress: \(nowsUser.email!)")
+        currentUser = nowsUser
         successToDo()
     }else{
         print("Not Signed in")
@@ -169,7 +171,7 @@ func logOut (completion: @escaping () -> Void) {
     attemptAutoLogin(successToDo: {
         fatalError("Still Logged in! Despite sign out")
     }, failToDo: {
-        print("userSignedOutSuccy")
+        print("User Signout was a success")
         completion()
     })
 }
