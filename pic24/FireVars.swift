@@ -159,6 +159,7 @@ func attemptAutoLogin (successToDo: @escaping () -> Void, failToDo: @escaping ()
     if let nowsUser = Auth.auth().currentUser {
         print("Current User Email Adress: \(nowsUser.email!)")
         currentUser = nowsUser
+        performFSSetup()
         successToDo()
     }else{
         print("Not Signed in")
@@ -235,8 +236,9 @@ func performFSSetup(){
     fs = Firestore.firestore()
     fsUsersCollection = fs.collection("users")
     if currentUser == nil {
-        print("userNotLoggedIn")
+        print("User Not Logged in at performFSSetup()")
     } else {
+        print("User Logged in at performFSSetup()")
         fsCurrentUser = fsUsersCollection.document(currentUser.uid)
     }
 }
