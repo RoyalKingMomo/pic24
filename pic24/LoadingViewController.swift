@@ -13,10 +13,8 @@ class LoadingViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         // TODO: Delay App Entering due to cooler animation
         attemptAutoLogin(successToDo: {
-            print("nigga shit")
             self.performSegue(withIdentifier: "autoLoginSuccess", sender: self)
         }, failToDo: {
-            print("nigga also shit")
             self.performSegue(withIdentifier: "loadingPageSuccess", sender: self)
         })
     }
