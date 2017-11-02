@@ -154,8 +154,8 @@ class FSCommentReaction {
     }
 }
 
-//  PLEASE NOTE: THIS IS A TEMPORARY LOGIN
-func performLogin(email: String, password: String ) {
+
+func performLogin(email: String, password: String, completion: @escaping () -> Void ) {
     firAuth = Auth.auth()
     firAuth.signIn(withEmail: email, password: password, completion: {(user, error) in
         if error != nil {
@@ -163,14 +163,31 @@ func performLogin(email: String, password: String ) {
         }else{
             currentUser = user!
             performFSSetup()
-            tempFillerSetup()
-            let swag = FSUser.init(user: currentUser)
-            swag.pullPosts()
             print(user!.email!)
+            completion()
         }
     })
 }
-//  PLEASE NOTE: THIS IS A TEMPORARY LOGIN
+
+func performSignUp(email: String, password: String, completion: @escaping () -> Void ) {
+    firAuth = Auth.auth()
+    firAuth.createUser(withEmail: email, password: password, completion:{ (user, error) in
+        if error != nil{
+            print(error!.localizedDescription)
+        }else{
+            currentUser = user!
+            performFSSetup()
+            tempFillerSetup()
+            print(user!.email!)
+            fillUserDataOnSignUp()
+            completion()
+        }
+    })
+}
+
+func fillUserDataOnSignUp (){
+    
+}
 
 func performFSSetup(){
     fs = Firestore.firestore()
@@ -186,10 +203,10 @@ func performFSSetup(){
 func tempFillerSetup() {
     print(fsCurrentUser.documentID)
     fsCurrentUser.setData([
-        "name"          : "Mohammad Al-Ahdal",
+        "name"          : "Mohammad \(arc4random())",
         "score"         : 0xFF,
         "theme"         : 0x01,
-        "username"      : "mkaa00x",
+        "username"      : "mkaa00\(arc4random())",
         "dateOfBirth"   : NSDate.init(timeIntervalSinceNow: 0.0),
         "joinDate"      : NSDate.init(timeIntervalSinceNow: 0.0)
         ])

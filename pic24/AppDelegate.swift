@@ -23,11 +23,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         //SetupFireStore
         performFSSetup()
         
-        
-        // WARNING: TEMPORARY
-        performLogin(email: "a@rz.ca", password: "RRRZZZ");
-        
-        
         /*
         for i in 0...10 {
             let newDocRef = fsCurrentUser.collection("posts").document()

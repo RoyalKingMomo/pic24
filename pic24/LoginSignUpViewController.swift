@@ -13,6 +13,11 @@ class LoginSignUpViewController: UIViewController {
     // State 0: Login Page
     // State 1: SignUp Start Page
     // State 2: SignUp End Page
+    var posOfSignUpButton: CGFloat = 0
+    var posOfEmailTextField: CGFloat = 0
+    var posOfEmailUnderline: CGFloat = 0
+    var colOfEmailUnderline: UIColor = UIColor.black
+    var colOfPasswordUnderline: UIColor = UIColor.black
     
     
     @IBOutlet weak var signUpButton: CustomButton!
@@ -26,6 +31,7 @@ class LoginSignUpViewController: UIViewController {
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var passwordUnderline: UIView!
     @IBOutlet weak var pic24Logo: UIImageView!
+    @IBOutlet weak var backButton: UIButton!
     
     override func viewDidLoad() {
         self.hideKeyboardWhenTappedAround()
@@ -39,9 +45,23 @@ class LoginSignUpViewController: UIViewController {
             var passwordCheck:Bool = false
             if self.emailTextField.text!.isValidEmail() {
                 emailCheck = true
+                UIView.animate(withDuration: 0.3, animations: {
+                    self.emailUnderline.backgroundColor! = self.colOfEmailUnderline
+                })
+            }else{
+                UIView.animate(withDuration: 0.3, animations: {
+                    self.emailUnderline.backgroundColor! = UIColor.init(hex: 0xCC2222).withAlphaComponent(0.5)
+                })
             }
             if self.passwordTextField.text!.count >= 6 {
                 passwordCheck = true
+                UIView.animate(withDuration: 0.3, animations: {
+                    self.passwordUnderline.backgroundColor! = self.colOfPasswordUnderline
+                })
+            }else{
+                UIView.animate(withDuration: 0.3, animations: {
+                    self.passwordUnderline.backgroundColor! = UIColor.init(hex: 0xCC2222).withAlphaComponent(0.5)
+                })
             }
             //Go to SignUp End
             if passwordCheck && emailCheck {
@@ -49,6 +69,10 @@ class LoginSignUpViewController: UIViewController {
                     self.stateChanger(toState: 2)
                 }else if self.state == 2{
                     //Actually Perform SignUp
+                    performSignUp(email: self.emailTextField.text!, password: self.passwordTextField.text!, completion: {
+                        //perform Segue
+                        self.performSegue(withIdentifier: "authSuccess", sender: self)
+                    })
                 }
             }
         }
@@ -58,22 +82,51 @@ class LoginSignUpViewController: UIViewController {
             var passwordCheck:Bool = false
             if self.emailTextField.text!.isValidEmail() {
                 emailCheck = true
+                UIView.animate(withDuration: 0.3, animations: {
+                    self.emailUnderline.backgroundColor! = self.colOfEmailUnderline
+                })
+            }else{
+                UIView.animate(withDuration: 0.3, animations: {
+                    self.emailUnderline.backgroundColor! = UIColor.init(hex: 0xCC2222).withAlphaComponent(0.5)
+                })
             }
             if self.passwordTextField.text!.count >= 6 {
                 passwordCheck = true
+                UIView.animate(withDuration: 0.3, animations: {
+                    self.passwordUnderline.backgroundColor! = self.colOfPasswordUnderline
+                })
+            }else{
+                UIView.animate(withDuration: 0.3, animations: {
+                    self.passwordUnderline.backgroundColor! = UIColor.init(hex: 0xCC2222).withAlphaComponent(0.5)
+                })
             }
             if emailCheck && passwordCheck{
-                performLogin(email: self.emailTextField.text!, password: self.passwordTextField.text!)
+                performLogin(email: self.emailTextField.text!, password: self.passwordTextField.text!, completion: {
+                    //perform Segue
+                    self.performSegue(withIdentifier: "authSuccess", sender: self)
+                })
             }
         }
         
         self.stateSetup()
+        self.saveVars()
+    }
+    
+    func saveVars () {
+        self.posOfSignUpButton = self.signUpButton.frame.origin.y
+        self.posOfEmailTextField = self.emailTextField.frame.origin.y
+        self.posOfEmailUnderline = self.emailUnderline.frame.origin.y
+        self.colOfEmailUnderline = self.emailUnderline.backgroundColor!
+        self.colOfPasswordUnderline = self.passwordUnderline.backgroundColor!
     }
     
     @IBAction func alternativeLoginButtonPressed(_ sender: Any) {
         stateChanger(toState: 0)
     }
     @IBAction func alternativeSignUpButtonPressed(_ sender: Any) {
+        stateChanger(toState: 1)
+    }
+    @IBAction func backButtonPressed(_ sender: Any) {
         stateChanger(toState: 1)
     }
     
@@ -135,6 +188,7 @@ class LoginSignUpViewController: UIViewController {
         self.loginButton.frame.origin.x -= self.view.frame.width
         self.signUpAlternativeButton.frame.origin.x -= self.view.frame.width
         self.signUpAlternativeLabel.frame.origin.x -= self.view.frame.width
+        self.backButton.alpha -= 1
     }
     
     func signUpStartToLogin () {
@@ -160,12 +214,32 @@ class LoginSignUpViewController: UIViewController {
     }
     func signUpEndToSignUpStart () {
         UIView.animate(withDuration: 0.300, animations: {
-            
+            self.pic24Logo.frame.origin.y += (self.pic24Logo.frame.height + self.pic24Logo.frame.minY)
+            self.emailUnderline.frame.origin.y += (self.posOfEmailUnderline - self.view.frame.height/32 - self.emailTextField.frame.height)
+            self.emailTextField.frame.origin.y += (self.posOfEmailTextField - self.view.frame.height/32)
+            self.emailUnderline.alpha += 1
+            self.passwordTextField.alpha += 1
+            self.passwordUnderline.alpha += 1
+            self.signUpButton.frame.origin.y -= (-self.posOfSignUpButton + self.view.frame.height*5/6)
+            self.emailTextField.isEnabled = true
+            self.loginAlternativeLabel.alpha += 1
+            self.loginAlternativeButton.alpha += 1
+            self.backButton.alpha -= 1
         })
     }
     func signUpStartToSignUpEnd () {
         UIView.animate(withDuration: 0.300, animations: {
             self.pic24Logo.frame.origin.y -= (self.pic24Logo.frame.height + self.pic24Logo.frame.minY)
+            self.emailUnderline.frame.origin.y -= (self.posOfEmailUnderline - self.view.frame.height/32 - self.emailTextField.frame.height)
+            self.emailTextField.frame.origin.y -= (self.posOfEmailTextField - self.view.frame.height/32)
+            self.emailUnderline.alpha -= 1
+            self.passwordTextField.alpha -= 1
+            self.passwordUnderline.alpha -= 1
+            self.signUpButton.frame.origin.y += (-self.posOfSignUpButton + self.view.frame.height*5/6)
+            self.emailTextField.isEnabled = false
+            self.loginAlternativeLabel.alpha -= 1
+            self.loginAlternativeButton.alpha -= 1
+            self.backButton.alpha += 1
         })
     }
     
