@@ -49,6 +49,9 @@ class LoginSignUpViewController: UIViewController {
             //First Check email and password conformity
             var emailCheck:Bool = false
             var passwordCheck:Bool = false
+            if self.emailTextField.text! != "" {
+                self.emailTextField.text! = self.emailTextField.text!.trailingTrim(.whitespaces)
+            }
             if self.emailTextField.text!.isValidEmail() {
                 emailCheck = true
                 UIView.animate(withDuration: 0.3, animations: {
@@ -78,6 +81,12 @@ class LoginSignUpViewController: UIViewController {
                 }else if self.state == 2{
                     var usernameCheck: Bool = false
                     var nameCheck: Bool = false
+                    if self.usernameTextField.text! != "" {
+                        self.usernameTextField.text! = self.usernameTextField.text!.trailingTrim(.whitespaces)
+                    }
+                    if self.nameTextField.text! != "" {
+                        self.nameTextField.text! = self.nameTextField.text!.trailingTrim(.whitespaces)
+                    }
                     if self.usernameTextField.text!.isValidUsername() {
                         usernameCheck = true
                         UIView.animate(withDuration: 0.3, animations: {
@@ -117,6 +126,9 @@ class LoginSignUpViewController: UIViewController {
             //Actually login
             var emailCheck:Bool = false
             var passwordCheck:Bool = false
+            if self.emailTextField.text! != "" {
+                self.emailTextField.text! = self.emailTextField.text!.trailingTrim(.whitespaces)
+            }
             if self.emailTextField.text!.isValidEmail() {
                 emailCheck = true
                 UIView.animate(withDuration: 0.3, animations: {

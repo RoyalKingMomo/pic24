@@ -164,6 +164,16 @@ func attemptAutoLogin (successToDo: @escaping () -> Void, failToDo: @escaping ()
     }
 }
 
+func logOut (completion: @escaping () -> Void) {
+    try! Auth.auth().signOut()
+    attemptAutoLogin(successToDo: {
+        fatalError("Still Logged in! Despite sign out")
+    }, failToDo: {
+        print("userSignedOutSuccy")
+        completion()
+    })
+}
+
 func performLogin(email: String, password: String, completion: @escaping () -> Void ) {
     firAuth = Auth.auth()
     firAuth.signIn(withEmail: email, password: password, completion: {(user, error) in

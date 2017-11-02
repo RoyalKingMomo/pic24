@@ -48,6 +48,7 @@
                     </scrollView>
                     <connections>
                         <outlet property="csv" destination="e3b-fE-ggs" id="deg-by-HI1"/>
+                        <segue destination="7PG-ZQ-e1X" kind="show" identifier="loggedOut" id="6O7-wr-MK2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WnS-4i-pt6" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -279,6 +280,7 @@
         <image name="loginWallpaper" width="562" height="1218"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="DMY-da-6sm"/>
+        <segue reference="6O7-wr-MK2"/>
+        <segue reference="SU1-Gp-z5u"/>
     </inferredMetricsTieBreakers>
 </document>

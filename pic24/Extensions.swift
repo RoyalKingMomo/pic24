@@ -56,4 +56,10 @@ extension String {
         let usernameTest = NSPredicate(format:"SELF MATCHES %@", usernameRegEx)
         return usernameTest.evaluate(with: self)
     }
+    func trailingTrim(_ characterSet : CharacterSet) -> String {
+        if let range = rangeOfCharacter(from: characterSet, options: [.anchored, .backwards]) {
+            return String(self[..<range.lowerBound]).trailingTrim(characterSet)
+        }
+        return self
+    }
 }
