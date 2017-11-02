@@ -10,10 +10,15 @@ import UIKit
 
 class LoadingViewController: UIViewController {
     
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        for _ in touches {
+    override func viewDidAppear(_ animated: Bool) {
+        // TODO: Delay App Entering due to cooler animation
+        attemptAutoLogin(successToDo: {
+            print("nigga shit")
+            self.performSegue(withIdentifier: "autoLoginSuccess", sender: self)
+        }, failToDo: {
+            print("nigga also shit")
             self.performSegue(withIdentifier: "loadingPageSuccess", sender: self)
-        }
+        })
     }
     
 }

@@ -154,6 +154,15 @@ class FSCommentReaction {
     }
 }
 
+func attemptAutoLogin (successToDo: @escaping () -> Void, failToDo: @escaping () -> Void) {
+    if let alreadySignedIn = Auth.auth().currentUser {
+        print(alreadySignedIn.email!)
+        successToDo()
+    }else{
+        print("Not Signed in")
+        failToDo()
+    }
+}
 
 func performLogin(email: String, password: String, completion: @escaping () -> Void ) {
     firAuth = Auth.auth()
@@ -218,5 +227,4 @@ func performFSSetup(){
     } else {
         fsCurrentUser = fsUsersCollection.document(currentUser.uid)
     }
-    
 }
