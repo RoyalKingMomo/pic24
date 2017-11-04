@@ -22,4 +22,5 @@ pod 'Firebase/Database'
 pod 'Firebase/Firestore'
 pod 'Firebase/Core'
 pod 'lottie-ios'
+pod 'CameraManager'
 end
