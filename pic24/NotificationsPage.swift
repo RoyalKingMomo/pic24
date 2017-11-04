@@ -16,6 +16,15 @@ class NotificationsPage : UIViewController {
         self.view.backgroundColor = UIColor(hex: 0x000000)
     }
     
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        for touch in touches {
+            print(touch.location(in: self.view))
+            logOut(completion: {
+                self.parent!.performSegue(withIdentifier: "loggedOut", sender: self.parent!)
+            })
+        }
+    }
+    
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
