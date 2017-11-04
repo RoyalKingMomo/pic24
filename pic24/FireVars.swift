@@ -193,7 +193,7 @@ func performLogin(email: String, password: String, completion: @escaping () -> V
         }else{
             currentUser = user!
             performFSSetup()
-            print(user!.email!)
+            print("Logged in user: \(user!.email!)")
             completion()
         }
     })
@@ -215,7 +215,7 @@ func performSignUp(email: String, password: String, completion: @escaping () -> 
         }else{
             currentUser = user!
             performFSSetup()
-            print(user!.email!)
+            print("New User: \(user!.email!)")
             completion()
         }
     })
