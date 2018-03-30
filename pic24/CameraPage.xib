@@ -4,13 +4,14 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CameraPage" customModule="pic24" customModuleProvider="target">
             <connections>
+                <outlet property="camView" destination="3rd-59-w0u" id="Zer-Ge-rpn"/>
                 <outlet property="view" destination="iN0-l3-epB" id="heR-Am-Hft"/>
             </connections>
         </placeholder>
@@ -18,8 +19,21 @@
         <view contentMode="scaleToFill" id="iN0-l3-epB">
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3rd-59-w0u">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </view>
+            </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="3rd-59-w0u" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" id="IIj-wP-p98"/>
+                <constraint firstItem="3rd-59-w0u" firstAttribute="height" secondItem="iN0-l3-epB" secondAttribute="height" id="LaJ-zr-YHS"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="top" secondItem="3rd-59-w0u" secondAttribute="top" constant="20" id="ZN7-q9-pMn"/>
+                <constraint firstItem="3rd-59-w0u" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" id="a9T-6M-uXc"/>
+            </constraints>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <point key="canvasLocation" x="35.5" y="54.5"/>
         </view>
     </objects>
 </document>

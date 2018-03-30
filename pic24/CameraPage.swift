@@ -33,13 +33,15 @@ let cameraManager = CameraManager.init()
 
 class CameraPage: UIViewController {
     
+    @IBOutlet weak var camView: UIView!
     
     
     override func viewDidLoad() {
-        cameraManager.addPreviewLayerToView(self.view)
+        _ = cameraManager.addPreviewLayerToView(self.camView)
         cameraManager.shouldEnableTapToFocus = true
         cameraManager.shouldEnablePinchToZoom = true
-        cameraManager.flashMode = .on
+        cameraManager.cameraOutputQuality = .high
+        cameraManager.shouldRespondToOrientationChanges = false
     }
     
     override func viewDidAppear(_ animated: Bool) {

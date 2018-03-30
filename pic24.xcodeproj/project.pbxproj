@@ -17,6 +17,9 @@
 		FA057CFA1F875DA7003D846B /* pic24Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA057CF91F875DA7003D846B /* pic24Tests.swift */; };
 		FA057D051F875DA7003D846B /* pic24UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA057D041F875DA7003D846B /* pic24UITests.swift */; };
 		FA0790ED1F8C0AB200BDB01E /* FireVars.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0790EC1F8C0AB200BDB01E /* FireVars.swift */; };
+		FA0CF82B1FAEA48900D4A189 /* StoryBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0CF8291FAEA48900D4A189 /* StoryBox.swift */; };
+		FA0CF82C1FAEA48900D4A189 /* StoryBox.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA0CF82A1FAEA48900D4A189 /* StoryBox.xib */; };
+		FA17BEC51FB3B94500C7BFB7 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA17BEC41FB3B94500C7BFB7 /* Reachability.swift */; };
 		FA4700B01F87FEEA001F9B04 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FA4700AF1F87FEEA001F9B04 /* GoogleService-Info.plist */; };
 		FA71216D1F885BA9001AE28B /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA71216C1F885BA9001AE28B /* LoadingViewController.swift */; };
 		FA71216F1F885C0B001AE28B /* LoginSignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA71216E1F885C0B001AE28B /* LoginSignUpViewController.swift */; };
@@ -72,6 +75,9 @@
 		FA057D041F875DA7003D846B /* pic24UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = pic24UITests.swift; sourceTree = "<group>"; };
 		FA057D061F875DA7003D846B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FA0790EC1F8C0AB200BDB01E /* FireVars.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FireVars.swift; sourceTree = "<group>"; };
+		FA0CF8291FAEA48900D4A189 /* StoryBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryBox.swift; sourceTree = "<group>"; };
+		FA0CF82A1FAEA48900D4A189 /* StoryBox.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StoryBox.xib; sourceTree = "<group>"; };
+		FA17BEC41FB3B94500C7BFB7 /* Reachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		FA4700AF1F87FEEA001F9B04 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		FA71216C1F885BA9001AE28B /* LoadingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingViewController.swift; sourceTree = "<group>"; };
 		FA71216E1F885C0B001AE28B /* LoginSignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginSignUpViewController.swift; sourceTree = "<group>"; };
@@ -151,6 +157,7 @@
 			isa = PBXGroup;
 			children = (
 				FA057CE41F875DA7003D846B /* AppDelegate.swift */,
+				FA17BEC41FB3B94500C7BFB7 /* Reachability.swift */,
 				FA0790EC1F8C0AB200BDB01E /* FireVars.swift */,
 				FAA8BBE81F89C290000A4CD6 /* RootSwipeViewController.swift */,
 				FAA8BBF21F89E0E9000A4CD6 /* Extensions.swift */,
@@ -161,6 +168,7 @@
 				FA4700AF1F87FEEA001F9B04 /* GoogleService-Info.plist */,
 				FA71216C1F885BA9001AE28B /* LoadingViewController.swift */,
 				FA71216E1F885C0B001AE28B /* LoginSignUpViewController.swift */,
+				FA0CF8201FAE9A2400D4A189 /* CustomElements */,
 				FA7121781F885D7B001AE28B /* Pages */,
 			);
 			path = pic24;
@@ -182,6 +190,15 @@
 				FA057D061F875DA7003D846B /* Info.plist */,
 			);
 			path = pic24UITests;
+			sourceTree = "<group>";
+		};
+		FA0CF8201FAE9A2400D4A189 /* CustomElements */ = {
+			isa = PBXGroup;
+			children = (
+				FA0CF8291FAEA48900D4A189 /* StoryBox.swift */,
+				FA0CF82A1FAEA48900D4A189 /* StoryBox.xib */,
+			);
+			name = CustomElements;
 			sourceTree = "<group>";
 		};
 		FA7121781F885D7B001AE28B /* Pages */ = {
@@ -333,6 +350,7 @@
 				FA4700B01F87FEEA001F9B04 /* GoogleService-Info.plist in Resources */,
 				FA057CEC1F875DA7003D846B /* Assets.xcassets in Resources */,
 				FAA8BBED1F89CF0B000A4CD6 /* HomePage.xib in Resources */,
+				FA0CF82C1FAEA48900D4A189 /* StoryBox.xib in Resources */,
 				FAA8BBEB1F89CEF8000A4CD6 /* CameraPage.xib in Resources */,
 				FA057CEA1F875DA7003D846B /* Main.storyboard in Resources */,
 				FAA8BBF11F89CF56000A4CD6 /* SettingsPage.xib in Resources */,
@@ -534,10 +552,12 @@
 			files = (
 				FA7121751F885CD6001AE28B /* NotificationsPage.swift in Sources */,
 				FAA8BBF31F89E0E9000A4CD6 /* Extensions.swift in Sources */,
+				FA17BEC51FB3B94500C7BFB7 /* Reachability.swift in Sources */,
 				FA71216F1F885C0B001AE28B /* LoginSignUpViewController.swift in Sources */,
 				FA0790ED1F8C0AB200BDB01E /* FireVars.swift in Sources */,
 				FA7121731F885C84001AE28B /* HomePage.swift in Sources */,
 				FAA8BBE91F89C290000A4CD6 /* RootSwipeViewController.swift in Sources */,
+				FA0CF82B1FAEA48900D4A189 /* StoryBox.swift in Sources */,
 				FA7121771F885D56001AE28B /* SettingsPage.swift in Sources */,
 				FA057CE51F875DA7003D846B /* AppDelegate.swift in Sources */,
 				FA7121711F885C40001AE28B /* CameraPage.swift in Sources */,
